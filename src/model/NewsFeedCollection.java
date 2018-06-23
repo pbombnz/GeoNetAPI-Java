@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Arrays;
 import java.util.List;
 
-public class NewsFeed {
+public class NewsFeedCollection {
     @SerializedName("feed")
     @Expose
     private List<NewsFeed_Item> feed = null;
@@ -17,7 +17,7 @@ public class NewsFeed {
 
     @Override
     public String toString() {
-        return "NewsFeed{" +
+        return "NewsFeedCollection{" +
                 "feed=" + Arrays.toString(feed.toArray()) +
                 '}';
     }
