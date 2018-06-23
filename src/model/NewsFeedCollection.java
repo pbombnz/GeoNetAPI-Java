@@ -9,9 +9,9 @@ import java.util.List;
 public class NewsFeedCollection {
     @SerializedName("feed")
     @Expose
-    private List<NewsFeed_Item> feed = null;
+    private List<NewsFeed> feed = null;
 
-    public List<NewsFeed_Item> getFeed() {
+    public List<NewsFeed> getFeed() {
         return feed;
     }
 

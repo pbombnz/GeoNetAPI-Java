@@ -3,7 +3,7 @@ package model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Quake {
+public class QuakeInformation {
     @SerializedName("type")
     @Expose
     private String type;
@@ -12,7 +12,7 @@ public class Quake {
     private Geometry geometry;
     @SerializedName("properties")
     @Expose
-    private Quake_Properties properties;
+    private QuakeInformation_Properties properties;
 
     public String getType() {
         return type;
@@ -22,13 +22,13 @@ public class Quake {
         return geometry;
     }
 
-    public Quake_Properties getProperties() {
+    public QuakeInformation_Properties getProperties() {
         return properties;
     }
 
     @Override
     public String toString() {
-        return "Quake{" +
+        return "QuakeInformation{" +
                 "type='" + type + '\'' +
                 ", geometry=" + geometry +
                 ", properties=" + properties +

@@ -1,6 +1,6 @@
 import model.FeltReportCollection;
 import model.NewsFeedCollection;
-import model.QuakeInfoResponse;
+import model.QuakeInformationCollection;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
@@ -32,9 +32,9 @@ public interface GeoNetService {
 
     @Headers("Accept: " + API_HEADER_GEOJSON2)
     @GET("quake/{publicID}")
-    Call<QuakeInfoResponse> getQuakeInfo(@Path("publicID") String publicID);
+    Call<QuakeInformationCollection> getQuakeInfo(@Path("publicID") String publicID);
 
     @Headers("Accept: " + API_HEADER_GEOJSON2)
     @GET("volcano/val")
-    Call<QuakeInfoResponse> getVolcanoAlertLevel();
+    Call<QuakeInformationCollection> getVolcanoAlertLevel();
 }

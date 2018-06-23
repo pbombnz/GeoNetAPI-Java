@@ -6,27 +6,27 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Arrays;
 import java.util.List;
 
-public class QuakeInfoResponse {
+public class QuakeInformationCollection {
     @SerializedName("type")
     @Expose
     private String type;
     @SerializedName("features")
     @Expose
-    private List<Quake> quakes = null;
+    private List<QuakeInformation> quakeInformations = null;
 
     public String getType() {
         return type;
     }
 
-    public List<Quake> getQuakes() {
-        return quakes;
+    public List<QuakeInformation> getQuakeInformations() {
+        return quakeInformations;
     }
 
     @Override
     public String toString() {
-        return "QuakeInfoResponse{" +
+        return "QuakeInformationCollection{" +
                 "type='" + type + '\'' +
-                ", quakes=" + Arrays.toString(quakes.toArray()) +
+                ", quakeInformations=" + Arrays.toString(quakeInformations.toArray()) +
                 '}';
     }
 }

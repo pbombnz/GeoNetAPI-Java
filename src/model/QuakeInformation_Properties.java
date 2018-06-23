@@ -3,7 +3,7 @@ package model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Quake_Properties {
+public class QuakeInformation_Properties {
     @SerializedName("publicID")
     @Expose
     private String publicID;
@@ -58,7 +58,7 @@ public class Quake_Properties {
 
     @Override
     public String toString() {
-        return "Quake_Properties{" +
+        return "QuakeInformation_Properties{" +
                 "publicID='" + publicID + '\'' +
                 ", time='" + time + '\'' +
                 ", depth=" + depth +

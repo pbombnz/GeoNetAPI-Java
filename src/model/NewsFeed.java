@@ -3,7 +3,7 @@ package model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class NewsFeed_Item {
+public class NewsFeed {
 
     @SerializedName("title")
     @Expose
@@ -36,7 +36,7 @@ public class NewsFeed_Item {
 
     @Override
     public String toString() {
-        return "NewsFeed_Item{" +
+        return "NewsFeed{" +
                 "title='" + title + '\'' +
                 ", published='" + published + '\'' +
                 ", link='" + link + '\'' +
