@@ -3,7 +3,7 @@ package model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Volcano_Feature_Properties {
+public class Volcano_Properties {
     @SerializedName("volcanoID")
     @Expose
     private String volcanoID;
@@ -42,7 +42,7 @@ public class Volcano_Feature_Properties {
 
     @Override
     public String toString() {
-        return "Volcano_Feature_Properties{" +
+        return "Volcano_Properties{" +
                 "volcanoID='" + volcanoID + '\'' +
                 ", volcanoTitle='" + volcanoTitle + '\'' +
                 ", level=" + level +

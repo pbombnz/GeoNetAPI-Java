@@ -3,30 +3,35 @@ package model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class Volcano {
     @SerializedName("type")
     @Expose
     private String type;
-    @SerializedName("features")
+    @SerializedName("geometry")
     @Expose
-    private List<Volcano_Feature> features = null;
+    private Geometry geometry;
+    @SerializedName("properties")
+    @Expose
+    private Volcano_Properties properties;
 
     public String getType() {
         return type;
     }
 
-    public List<Volcano_Feature> getFeatures() {
-        return features;
+    public Geometry getGeometry() {
+        return geometry;
+    }
+
+    public Volcano_Properties getProperties() {
+        return properties;
     }
 
     @Override
     public String toString() {
         return "Volcano{" +
                 "type='" + type + '\'' +
-                ", features=[" + Arrays.toString(features.toArray()) +
-                "]}";
+                ", geometry=" + geometry +
+                ", properties=" + properties +
+                '}';
     }
 }
