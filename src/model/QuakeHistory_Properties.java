@@ -3,7 +3,7 @@ package model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class QuakeInformation_Properties {
+public class QuakeHistory_Properties {
     @SerializedName("publicID")
     @Expose
     private String publicID;
@@ -11,6 +11,10 @@ public class QuakeInformation_Properties {
     @SerializedName("time")
     @Expose
     private String time;
+
+    @SerializedName("modificationTime")
+    @Expose
+    private String modificationTime;
 
     @SerializedName("depth")
     @Expose
@@ -41,16 +45,15 @@ public class QuakeInformation_Properties {
         return time;
     }
 
+    public String getModificationTime() { return modificationTime; }
 
     public Double getDepth() {
         return depth;
     }
 
-
     public Double getMagnitude() {
         return magnitude;
     }
-
 
     public String getLocality() {
         return locality;
@@ -60,18 +63,5 @@ public class QuakeInformation_Properties {
 
     public String getQuality() {
         return quality;
-    }
-
-    @Override
-    public String toString() {
-        return "QuakeInformation_Properties{" +
-                "publicID='" + publicID + '\'' +
-                ", time='" + time + '\'' +
-                ", depth=" + depth +
-                ", magnitude=" + magnitude +
-                ", locality='" + locality + '\'' +
-                ", mmi=" + mmi +
-                ", quality='" + quality + '\'' +
-                '}';
     }
 }

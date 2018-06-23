@@ -1,6 +1,6 @@
-import model.FeltReportCollection;
-import model.NewsFeedCollection;
-import model.QuakeInformationCollection;
+package api;
+
+import model.*;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
@@ -10,7 +10,7 @@ import retrofit2.http.Query;
 
 public interface GeoNetService {
     String API_HEADER_JSON = "application/json;version=2";
-    String API_HEADER_GEOJSON = "application/vnd.geo+json;version=1";
+    String API_HEADER_GEOJSON = "application/vnd.geo+json;version=1"; // Obsolete
     String API_HEADER_GEOJSON2 = "application/vnd.geo+json;version=2";
 
     @Headers("Accept: " + API_HEADER_GEOJSON2)
@@ -30,9 +30,18 @@ public interface GeoNetService {
     @GET("news/geonet")
     Call<NewsFeedCollection> getNews();
 
+    //@Headers("Accept: " + API_HEADER_GEOJSON2)
+    @GET("quake/stats")
+    Call<QuakeStatsCollection> getQuakeStats();
+
     @Headers("Accept: " + API_HEADER_GEOJSON2)
     @GET("quake/{publicID}")
     Call<QuakeInformationCollection> getQuakeInfo(@Path("publicID") String publicID);
+
+    @Headers("Accept: " + API_HEADER_GEOJSON2)
+    @GET("quake/history/{publicID}")
+    Call<QuakeHistoryCollection> getQuakeHistory(@Path("publicID") String publicID);
+
 
     @Headers("Accept: " + API_HEADER_GEOJSON2)
     @GET("volcano/val")
