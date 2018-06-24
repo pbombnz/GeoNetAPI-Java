@@ -3,10 +3,10 @@ package api;
 import api.deserializers.QuakeStatsCollection_Deserializer;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.tickaroo.tikxml.retrofit.TikXmlConverterFactory;
 import model.QuakeStatsCollection;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -42,9 +42,10 @@ public class GeoNetAPI {
             //System.out.println(service.getFeltReports("measured").execute().body());
             //System.out.println(service.getFeltReports("reported", "2013p407387").execute().body());
             //System.out.println(service.getQuakeHistory("2014p715167").execute().body());
-            Response<QuakeStatsCollection> rqsc = service.getQuakeStats().execute();
-            System.out.println(rqsc.body());
+            //Response<QuakeStatsCollection> rqsc = service.getQuakeStats().execute();
+            //System.out.println(rqsc.body());
             //System.out.println(service.getQuakeStats().execute().raw());
+            //System.out.println(service.getQuakesByMagnitude(3).execute().body());
         } catch (IOException e) {
             e.printStackTrace();
         }

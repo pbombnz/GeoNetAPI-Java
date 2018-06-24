@@ -21,11 +21,6 @@ public interface GeoNetService {
     @GET("/intensity")
     Call<FeltReportCollection> getFeltReports(@Query("type") String type, @Query("publicID") String publicID);
 
-    /**
-     * Retrieves feed of GeoNet news.
-     *
-     * @return A list of recent news items.
-     */
     @Headers("Accept: " + API_HEADER_JSON)
     @GET("news/geonet")
     Call<NewsFeedCollection> getNews();
@@ -35,13 +30,19 @@ public interface GeoNetService {
     Call<QuakeStatsCollection> getQuakeStats();
 
     @Headers("Accept: " + API_HEADER_GEOJSON2)
+    @GET("quake")
+    Call<QuakeInformationCollection> getQuakesByMagnitude(@Query("MMI") int MMI);
+
+    //@GET("cap/1.2/GPA1.0/feed/atom1.0/quake")
+    //Call<QuakeCADFeed> getQuakeCADFeed();
+
+    @Headers("Accept: " + API_HEADER_GEOJSON2)
     @GET("quake/{publicID}")
     Call<QuakeInformationCollection> getQuakeInfo(@Path("publicID") String publicID);
 
     @Headers("Accept: " + API_HEADER_GEOJSON2)
     @GET("quake/history/{publicID}")
     Call<QuakeHistoryCollection> getQuakeHistory(@Path("publicID") String publicID);
-
 
     @Headers("Accept: " + API_HEADER_GEOJSON2)
     @GET("volcano/val")
