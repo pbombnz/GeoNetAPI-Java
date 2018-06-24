@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b80dde8-51f4-47e0-b419-e59ff284afbf" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/GeoNetAPITests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeoNetAPI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GeoNetAPI.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/GeoNetAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/GeoNetAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,16 +27,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GeoNetAPITests.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GeoNetAPITests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/GeoNetAPITests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="54" column="15" selection-start-line="54" selection-start-column="15" selection-end-line="54" selection-end-column="15" />
+            <state relative-caret-position="454">
+              <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#277#278#0" expanded="true" />
                 <element signature="e#319#320#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -99,6 +105,7 @@
         <option value="$PROJECT_DIR$/src/api/GeoNetService.java" />
         <option value="$PROJECT_DIR$/src/api/GeoNetAPI.java" />
         <option value="$PROJECT_DIR$/tests/GeoNetAPITests.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -127,6 +134,12 @@
               <item name="GeoNetAPI" type="b2602c69:ProjectViewProjectNode" />
               <item name="GeoNetAPI" type="462c0819:PsiDirectoryNode" />
               <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GeoNetAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GeoNetAPI" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GeoNetAPI" type="b2602c69:ProjectViewProjectNode" />
@@ -317,13 +330,17 @@
       <option name="project" value="LOCAL" />
       <updated>1529835982801</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added UnitTests for API calls.">
+      <created>1529837778968</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1529837778968</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GeoNetAPITests - 2018.06.24 at 22h 43m 14s.xml">
-      <configuration name="GeoNetAPITests" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="GeoNetAPITests - 2018.06.24 at 22h 43m 43s.xml">
       <configuration name="GeoNetAPITests" configurationId="JUnit" />
     </history-entry>
@@ -351,6 +368,9 @@
     <history-entry file="GeoNetAPITests - 2018.06.24 at 22h 52m 57s.xml">
       <configuration name="GeoNetAPITests" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="GeoNetAPITests - 2018.06.24 at 22h 55m 09s.xml">
+      <configuration name="GeoNetAPITests" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="0" />
@@ -362,11 +382,11 @@
       <window_info anchor="right" id="Palette&#9;" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.32912722" />
+      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.32912722" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.25" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
       <window_info id="UI Designer" order="0" />
@@ -389,7 +409,8 @@
     <MESSAGE value="Renamed model classes to match GeoNet API documentation." />
     <MESSAGE value="Added 66% of API calls. Added additional libraries to make debugging easier." />
     <MESSAGE value="Added 7/9 API calls working. CAD Feed Calls yet to go." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added 7/9 API calls working. CAD Feed Calls yet to go." />
+    <MESSAGE value="Added UnitTests for API calls." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added UnitTests for API calls." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -793,15 +814,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/GeoNetAPITests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="54" column="15" selection-start-line="54" selection-start-column="15" selection-end-line="54" selection-end-column="15" />
+        <state relative-caret-position="454">
+          <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#277#278#0" expanded="true" />
             <element signature="e#319#320#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
