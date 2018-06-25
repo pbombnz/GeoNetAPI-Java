@@ -15,7 +15,7 @@ hence I will not write my own documentation, although javadocs have been created
 * *junit:junit:4.12* - Unit testing.
 
 ## Why TikXML?
-Although SimpleXML is more well known and the API is will documented, it is deprecated when used with Retrofit2 due to 
+Although SimpleXML is more well known and the API is well-documented, it is deprecated when used with Retrofit2 due to 
 the number of CVEs, hence chose to use an alternative that seems viable, known as TikXML. Additionally, TikXML uses less 
 memory and has faster processing.
 
