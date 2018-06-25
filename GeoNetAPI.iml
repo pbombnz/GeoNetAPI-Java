@@ -11,5 +11,9 @@
     <orderEntry type="library" name="com.squareup.retrofit2:retrofit:2.4.0" level="project" />
     <orderEntry type="library" name="com.squareup.retrofit2:converter-gson:2.4.0" level="project" />
     <orderEntry type="library" name="junit:junit:4.12" level="project" />
+    <orderEntry type="library" name="com.tickaroo.tikxml:annotation:0.8.13" level="project" />
+    <orderEntry type="library" name="com.tickaroo.tikxml:core:0.8.13" level="project" />
+    <orderEntry type="library" name="com.tickaroo.tikxml:retrofit-converter:0.8.13" level="project" />
+    <orderEntry type="library" name="com.tickaroo.tikxml:processor:0.8.13" level="project" />
   </component>
 </module>
