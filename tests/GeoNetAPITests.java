@@ -1,6 +1,5 @@
 import api.GeoNetAPI;
-import model.FeltReportCollection;
-import model.NewsFeedCollection;
+import model.*;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -17,7 +16,7 @@ public class GeoNetAPITests {
     }
 
     @Test
-    public void Intensity_Tests() throws IOException {
+    public void getFeltReports_Tests() throws IOException {
         Call<FeltReportCollection> feltReportCollectionCall;
 
         // Accepted Input
@@ -52,8 +51,76 @@ public class GeoNetAPITests {
     }
 
     @Test
-    public void GeoNetNews_Tests() throws IOException {
+    public void getNews_Tests() throws IOException {
         Call<NewsFeedCollection> newsFeedCollectionCall = api.getService().getNews();
         Assert.assertTrue(newsFeedCollectionCall.execute().isSuccessful());
+    }
+
+    @Test
+    public void getQuakeStats_Tests() throws IOException {
+        Call<QuakeStatsCollection> quakeStatsCollectionCall = api.getService().getQuakeStats();
+        Assert.assertTrue(quakeStatsCollectionCall.execute().isSuccessful());
+    }
+
+    @Test
+    public void getQuakeByMagnitude_Tests() throws IOException {
+        // Valid Inputs
+        Call<QuakeInformationCollection> quakeInformationCollectionCall;
+        for(int i = -1; i < 9; i++) {
+            quakeInformationCollectionCall = api.getService().getQuakesByMagnitude(i);
+            Assert.assertTrue(quakeInformationCollectionCall.execute().isSuccessful());
+        }
+        //Invalid Inputs
+        quakeInformationCollectionCall = api.getService().getQuakesByMagnitude(1000);
+        Assert.assertFalse(quakeInformationCollectionCall.execute().isSuccessful());
+
+        quakeInformationCollectionCall = api.getService().getQuakesByMagnitude(-1000);
+        Assert.assertFalse(quakeInformationCollectionCall.execute().isSuccessful());
+    }
+
+    @Test
+    public void getQuakeInfo_Tests() throws IOException {
+        // Valid Inputs
+        Call<QuakeInformationCollection> quakeInformationCollectionCall = api.getService().getQuakeInfo("2014p715167");
+        Assert.assertTrue(quakeInformationCollectionCall.execute().isSuccessful());
+
+        // Invalid Inputs
+        quakeInformationCollectionCall = api.getService().getQuakeInfo("");
+        Assert.assertFalse(quakeInformationCollectionCall.execute().isSuccessful());
+
+        quakeInformationCollectionCall = api.getService().getQuakeInfo("abc123");
+        Assert.assertFalse(quakeInformationCollectionCall.execute().isSuccessful());
+
+        try {
+            quakeInformationCollectionCall = api.getService().getQuakeInfo(null);
+            quakeInformationCollectionCall.execute();
+            Assert.fail("Should not process this API call regardless of success or not.");
+        } catch (IllegalArgumentException e) { }
+    }
+
+    @Test
+    public void getQuakeHistory_Tests() throws IOException {
+        // Valid Inputs
+        Call<QuakeHistoryCollection> quakeHistoryCollectionCall = api.getService().getQuakeHistory("2014p715167");
+        Assert.assertTrue(quakeHistoryCollectionCall.execute().isSuccessful());
+
+        // Invalid Inputs
+        quakeHistoryCollectionCall = api.getService().getQuakeHistory("");
+        Assert.assertFalse(quakeHistoryCollectionCall.execute().isSuccessful());
+
+        quakeHistoryCollectionCall = api.getService().getQuakeHistory("abc123");
+        Assert.assertFalse(quakeHistoryCollectionCall.execute().isSuccessful());
+
+        try {
+            quakeHistoryCollectionCall = api.getService().getQuakeHistory(null);
+            quakeHistoryCollectionCall.execute();
+            Assert.fail("Should not process this API call regardless of success or not.");
+        } catch (IllegalArgumentException e) { }
+    }
+
+    @Test
+    public void getVolcanoAlertLevels_Tests() throws IOException {
+        Call<VolcanoCollection> volcanoCollectionCall = api.getService().getVolcanoAlertLevel();
+        Assert.assertTrue(volcanoCollectionCall.execute().isSuccessful());
     }
 }
