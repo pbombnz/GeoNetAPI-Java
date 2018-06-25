@@ -10,61 +10,34 @@ import java.util.Map;
 public class QuakeStatsCollection_Deserializer implements JsonDeserializer<QuakeStatsCollection> {
     @Override
     public QuakeStatsCollection deserialize(JsonElement json, Type type, JsonDeserializationContext context) throws JsonParseException {
-        //Map.Entry<String, JsonElement> entry = json.getAsJsonObject().entrySet().iterator().next();
-        //System.out.println(json);
-
+        // Convert json to JsonObject and start breaking it down into the two categories
         JsonObject jsonObject = json.getAsJsonObject();
-        // magnitudeCount
+        // Retrieve nested magnitudeCount JsonObject
         JsonObject magnitudeCount = jsonObject.getAsJsonObject("magnitudeCount");
-        // rate
+        // Retrieve nested  rate JsonObject
         JsonObject rate = jsonObject.getAsJsonObject("rate");
 
-        Map<String, Map<String, Integer>> maps = new HashMap<>();
-
-        for(Map.Entry<String, JsonElement> entry : magnitudeCount.entrySet()) {
-            //System.out.println("entry.getKey():"+entry.getKey());
-            //System.out.println("entry.getValue():"+ entry.getValue());
-
-            Map<String, Integer> magCount = new HashMap<>();
-
-            JsonObject magCountJSONObject = entry.getValue().getAsJsonObject();
-            for(Map.Entry<String, JsonElement> entry2 : magCountJSONObject.entrySet()) {
-                ///System.out.println("entry2.getKey():"+entry2.getKey());
-                //System.out.println("entry2.getValue():"+ entry2.getValue());
-
-                JsonElement je = entry2.getValue();
-                magCount.put(entry2.getKey(), je.getAsInt());
-            }
-            maps.put(entry.getKey(), magCount);
-        }
-
-        //System.out.println("RATE DEM GEE");
-
-        Map<String, Map<String, Integer>> maps2 = new HashMap<>();
-
-        for(Map.Entry<String, JsonElement> entry : rate.entrySet()) {
-            //System.out.println("entry.getKey():"+entry.getKey());
-            //System.out.println("entry.getValue():"+ entry.getValue());
-
-            Map<String, Integer> ratePerCount = new HashMap<>();
-
-            JsonObject ratePerJSONObject = entry.getValue().getAsJsonObject();
-            for(Map.Entry<String, JsonElement> entry2 : ratePerJSONObject.entrySet()) {
-                //System.out.println("entry2.getKey():"+entry2.getKey());
-                //System.out.println("entry2.getValue():"+ entry2.getValue());
-
-                JsonElement je = entry2.getValue();
-                ratePerCount.put(entry2.getKey(), je.getAsInt());
-            }
-            maps2.put(entry.getKey(), ratePerCount);
-        }
-
         QuakeStatsCollection qsc = new QuakeStatsCollection();
-        qsc.setMagnitudeCount(maps);
-        qsc.setRate(maps2);
+        qsc.setMagnitudeCount(jsonObjectToMap(magnitudeCount));
+        qsc.setRate(jsonObjectToMap(rate));
 
-        //MapUtils.debugPrint(System.out, "magCount", maps);
-        //MapUtils.debugPrint(System.out, "rate", maps2);
         return qsc;
+    }
+
+    private Map<String, Map<String, Integer>> jsonObjectToMap(JsonObject jsonObject) {
+        Map<String, Map<String, Integer>> map = new HashMap<>();
+
+        for(Map.Entry<String, JsonElement> entry : jsonObject.entrySet()) {
+            Map<String, Integer> innerMap = new HashMap<>();
+
+            JsonObject nestedJsonObject = entry.getValue().getAsJsonObject();
+            for(Map.Entry<String, JsonElement> nestedEntry : nestedJsonObject.entrySet()) {
+                JsonElement jsonElement = nestedEntry.getValue();
+                innerMap.put(nestedEntry.getKey(), jsonElement.getAsInt());
+            }
+            map.put(entry.getKey(), innerMap);
+        }
+
+        return map;
     }
 }
