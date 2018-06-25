@@ -22,9 +22,9 @@ public class GeoNetCADTests {
         Assert.assertTrue(quakeCADCall.execute().isSuccessful());
     }
 
-    @Test
+    /*@Test
     public void getQuakeCAD_Tests() throws IOException {
         Call<QuakeCAD> quakeCADCall = api.getCADService().getQuakeCAD("2015p822263.1446357128542910");
         Assert.assertTrue(quakeCADCall.execute().isSuccessful());
-    }
+    }*/
 }

@@ -40,6 +40,7 @@ public class GeoNetAPI {
                 .addConverterFactory(TikXmlConverterFactory.create(tikXml))
                 .build();
 
+        this.service = retrofit.create(GeoNetService.class);
         this.cadService = cadRetrofit.create(GeoNetCADService.class);
     }
 
