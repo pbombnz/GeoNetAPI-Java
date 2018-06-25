@@ -6,15 +6,13 @@ The API is designed to match the documentation on the GeoNet API official docume
 hence I will not write my own documentation.
 
 ## Dependencies
-* Retrofit 2.4.0 - RESTful Client used to access the Web Service.
-* Retrofit GSON Converter 2.4.0 - Transforms JSON data into Java Objects via GSON.
-* OkHttp 3 Logging interceptor 3.10.0 - Displays debug logs for API Calls.
-* Junit 4.12 - Unit testing.
+* *com.squareup.retrofit2:retrofit2:2.4.0* - RESTful Client used to access the Web Service.
+* *com.squareup.retrofit2:converter-gson:2.4.0* - Transforms JSON data into Java Objects via GSON.
+* *junit:junit:4.12* - Unit testing.
 
-Both *OkHttp 3 Logging interceptor 3.10.0* and/or *Junit 4.12* could be completely removed as dependencies if the
-code used to enables OkHttp logging is deleted and/or unit tests class file is also deleted.
+The Junit library can be completely removed as a dependency if the unit testing Class file is also deleted.
 
 ## Features coming soon
-* Quake CAD Feed Call
-* Quake CAD Call
-
+* Definitely: Quake CAD Feed Call
+* Definitely: Quake CAD Call
+* Possibly: FITS API

@@ -4,8 +4,6 @@ import api.deserializers.QuakeStatsCollection_Deserializer;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import model.QuakeStatsCollection;
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -22,15 +20,9 @@ public class GeoNetAPI {
                 .registerTypeAdapter(QuakeStatsCollection.class, new QuakeStatsCollection_Deserializer())
                 .create();
 
-        // Use custom OkHttpClient to allow debug logs.
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-        interceptor.setLevel(HttpLoggingInterceptor.Level.NONE);
-        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
-
         // Creating service.
         this.retrofit = new Retrofit.Builder()
                 .baseUrl(API_URL)
-                .client(client)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
